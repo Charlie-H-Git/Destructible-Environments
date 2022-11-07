@@ -11,6 +11,7 @@ public class ShellController : MonoBehaviour
     private Rigidbody rb;
     public int ShellDamage;
     public float ExplosionRadius;
+    public float ExplosionForce;
     void OnEnable()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -30,7 +31,7 @@ public class ShellController : MonoBehaviour
         {
             var rb = collision.gameObject.GetComponent<Rigidbody>();
             rb.isKinematic = false;
-            rb.AddExplosionForce(ShellDamage, gameObject.transform.position, ExplosionRadius);
+            rb.AddExplosionForce(ExplosionForce, collision.gameObject.transform.position, ExplosionRadius, 15f, ForceMode.Impulse);
         }
         
         gameObject.SetActive(false);
