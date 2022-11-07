@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShellDamage: 10
   ExplosionRadius: 50
-  ExplosionForce: 100
+  ExplosionForce: 50
 --- !u!54 &2470110432754879156
 Rigidbody:
   m_ObjectHideFlags: 0

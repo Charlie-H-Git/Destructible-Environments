@@ -22,6 +22,7 @@ public class DestroyedController : MonoBehaviour
         {
             var rb = child.gameObject.GetComponent<Rigidbody>();
             rb.mass = DividedMass;
+            rb.isKinematic = true;
             print(rb.mass);
         }
     }

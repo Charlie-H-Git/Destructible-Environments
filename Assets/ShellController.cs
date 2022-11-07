@@ -37,7 +37,20 @@ public class ShellController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        List<GameObject> DetectedObjects = new List<GameObject>();
+        DetectedObjects.Add(other.gameObject);
+        foreach (var gameObject in DetectedObjects)
+        {
+            if (gameObject.CompareTag("WallPeice"))
+            {
+                var rb = gameObject.GetComponent<Rigidbody>();
+                rb.isKinematic = false;
+            }
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
